@@ -26,7 +26,7 @@ public class Main {
             try {
                 letsCopy(a, b);
             } catch (IOException e) {
-                System.out.println("Greška u kopiranju : " + e);
+                System.out.println("Greška u kopiranju : "+e);
                 return;
             }
 
@@ -42,7 +42,7 @@ public class Main {
             }
 
         } catch (Exception e) {
-            System.out.println("Pojavila se greška: " + e);
+            System.out.println("Pojavila se greška: "+e);
         }
     }
 
