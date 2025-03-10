@@ -7,14 +7,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
 
-        try{
+        try (Scanner sc = new Scanner(System.in)) {
             System.out.println("Unesite putanju do originalne datoteke koju želite kopirati :");
-            String origFile= sc.nextLine();
+            String origFile = sc.nextLine();
             System.out.println("Unesite naziv i putanju do destinacijske datoteke :");
-            String destFile= sc.nextLine();
+            String destFile = sc.nextLine();
 
             File a = new File(origFile);
             File b = new File(destFile);
@@ -24,10 +23,10 @@ public class Main {
                 return;
             }
 
-            try{
-                letsCopy(a,b);
-            }catch(IOException e){
-                System.out.println("Greška u kopiranju : "+e);
+            try {
+                letsCopy(a, b);
+            } catch (IOException e) {
+                System.out.println("Greška u kopiranju : " + e);
                 return;
             }
 
@@ -35,18 +34,15 @@ public class Main {
             System.out.println("Želite li izbrisat kopiju datoteke? (D/N)");
             String s = sc.nextLine();
             if (s.equalsIgnoreCase("D")) {
-                if(b.delete()){
+                if (b.delete()) {
                     System.out.println("Kopija datoteke uspješno obrisana");
-                }
-                else{
+                } else {
                     System.out.println("Brisanje kopije nije uspjelo");
                 }
             }
 
         } catch (Exception e) {
-            System.out.println("Pojavila se greška: "+e);
-        } finally {
-            sc.close();
+            System.out.println("Pojavila se greška: " + e);
         }
     }
 
@@ -65,12 +61,12 @@ public class Main {
             try {
                 in.close();
             } catch (IOException e) {
-                System.out.println("Greška pri zatvaranju ulaznog toka: " + e);
+                System.out.println("Greška pri zatvaranju ulaznog toka: "+e);
             }
             try {
                 out.close();
             } catch (IOException e) {
-                System.out.println("Greška pri zatvaranju izlaznog toka: " + e);
+                System.out.println("Greška pri zatvaranju izlaznog toka: "+e);
             }
         }
     }
