@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+    //C:\Users\yelen\Desktop\Algebra34\original.pdf
 
         try (Scanner sc = new Scanner(System.in)) {
             System.out.println("Unesite putanju do originalne datoteke koju želite kopirati :");
@@ -35,7 +35,7 @@ public class Main {
             String s = sc.nextLine();
             if (s.equalsIgnoreCase("D")) {
                 if (b.delete()) {
-                    System.out.println("Kopija datoteke uspješno obrisana");
+                    System.out.println(b.getName()+"  datoteka uspješno obrisana");
                 } else {
                     System.out.println("Brisanje kopije nije uspjelo");
                 }
