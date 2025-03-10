@@ -24,6 +24,7 @@ public class Main {
 
             try {
                 letsCopy(a, b);
+                System.out.println("Datoteka je uspješno kopirana u : "+b.getName());
             } catch (IOException e) {
                 System.out.println("Greška u kopiranju : "+e);
                 return;
